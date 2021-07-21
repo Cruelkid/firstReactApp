@@ -1,9 +1,10 @@
+import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem";
 import "./ExpensesList.css";
 
-function ExpensesList(props) {
+const ExpensesList = (props) => {
     return (
-        <div className="expenses">
+        <Card className="expenses">
             {props.expenses.map((el) => (
                 <ExpenseItem
                     key={el.id}
@@ -12,7 +13,7 @@ function ExpensesList(props) {
                     date={el.date}
                 />
             ))}
-        </div>
+        </Card>
     );
 }
 
