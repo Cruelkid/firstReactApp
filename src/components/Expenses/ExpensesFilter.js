@@ -7,12 +7,13 @@ const ExpensesFilter = (props) => {
         let chosenYear = event.target.value;
         props.onYearChange(chosenYear);
     };
-console.log(props.initialYear);
+
     return (
         <div className='expenses-filter'>
             <div className='expenses-filter__control'>
             <label>Filter by year</label>
-            <select onChange={dropdownChangeHandler} defaultValue={props.initialYear}>
+            <select onChange={dropdownChangeHandler} value={props.initialYear}>
+            {/* <select onChange={dropdownChangeHandler} defaultValue={props.initialYear}> */}
                 <option value='2022'>2022</option>
                 <option value='2021'>2021</option>
                 <option value='2020'>2020</option>
