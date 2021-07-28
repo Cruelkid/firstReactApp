@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ExpensesList from "./components/Expenses/ExpensesList";
+import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 // function App() {
@@ -32,6 +32,7 @@ const DUMMY_EXPENSES = [
 
 const App = () => {
     const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+    // const [filteredExpenses, setFilteredExpenses] = useState(expenses);
 
     const addExpenseHandler = (expense) => {
         setExpenses(prevExpenses => {
@@ -39,10 +40,17 @@ const App = () => {
         });
     };
 
+    // const filterItemsHandler = (year) => {
+        // setFilteredExpenses(prevExpenses => {
+            // return expenses.filter(prevExpenses => prevExpenses.date.getFullYear() === parseInt(year));
+        // });
+    // };
+
     return (
         <div>
             <NewExpense onAddExpense={addExpenseHandler} />
-            <ExpensesList expenses={expenses} />
+            <Expenses expenses={expenses} />
+            {/* <Expenses expenses={filteredExpenses} filterItemsPerYear={filterItemsHandler} /> */}
         </div>
     );
 
@@ -50,7 +58,7 @@ const App = () => {
         // "div",
         // {},
         // React.createElement("h2", {}, "Let's get started!"),
-        // React.createElement(ExpensesList, { expenses: expenses })
+        // React.createElement(Expenses, { expenses: expenses })
     // );
 }
 
